@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    max-height: 600px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    user-select: none;
+  }
+  #game {
+    background: #2a2548;
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    max-height: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  #turnIndicator {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #cfcffc;
+    min-height: 1.3em;
+  }
+  #board {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    padding: 15px 20px 20px;
+  }
+  .cell {
+    background: #3e3a65;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: background 0.3s ease;
+    user-select: none;
+  }
+  .cell:active {
+    background: #5c59a1;
+  }
+  .cell.disabled {
+    cursor: default;
+    color: #7671aa;
+  }
+  #result {
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    min-height: 1.5em;
+    color: #cfcffc;
+  }
+  #restartBtn {
+    margin: 0 20px 20px;
+    padding: 12px;
+    font-size: 1.2rem;
+    background: #7f6ad8;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    user-select: none;
+  }
+  #restartBtn:hover,
+  #restartBtn:focus {
+    background: #9385f6;
+  }
+
+  /* Responsive for smaller screens */
+  @media (max-width: 360px) {
+    #board {
+      gap: 6px;
+      padding: 10px 15px 15px;
+    }
+    .cell {
+      font-size: 3.5rem;
+      border-radius: 10px;
+    }
+    header h1 {
+      font-size: 1.8rem;
+    }
+    #restartBtn {
+      font-size: 1rem;
+      padding: 10px;
+      margin: 0 15px 15px;
+    }
+  }
